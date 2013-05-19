@@ -22,8 +22,8 @@ def index():
     r = twiml.Response()
     r.sms(text)
 
-    # Return the TwiML
+    # Return the TwiML response
     return str(r)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=3000)
+    app.run(debug=True)
