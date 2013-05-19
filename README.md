@@ -11,8 +11,10 @@ $ cd text-ddg
 $ virtualenv env
 $ . env/bin/activate
 $ pip install -r requirements.txt
-$ gunicorn app:app -p text-ddg.pid -D
+$ gunicorn app:app -p text-ddg.pid -b 0.0.0.0:8000 -D
 ```
+
+You can deploy it as you would any other Flask app, this is just what I used.
 
 To get going, you'll need to set up a TwiML app on Twilio. Leave the voice URL blank and set the SMS request URL to the server where the app will be running. When someone sends a text to the associated phone number, Twilio will send a GET request to your application and respond to the sender with the SMS specified by this application.
 
